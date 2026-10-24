@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lana Clavière — Tote bags faits main</title>
+  <meta name="description" content="Tote bags imprimés, brodés et personnalisés, faits main par Lana Clavière au Meux, près de Compiègne (Oise).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <a href="#" class="logo">Lana <em>Clavière</em></a>
+    <nav class="menu" id="menu">
+      <a href="#collection">Collection</a>
+      <a href="#perso">Personnaliser</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker">Fait main au Meux (Oise) · Coton bio</p>
+        <h1>Des tote bags qui ont <em>du caractère</em>.</h1>
+        <p class="lead">Chaque sac est imprimé ou brodé à la main par Lana, dans son petit atelier. Pour les courses, la plage, les cours… ou juste pour le plaisir.</p>
+        <div class="hero-cta">
+          <a href="#collection" class="btn">Voir la collection</a>
+          <a href="#perso" class="btn btn-ghost">Créer le mien</a>
+        </div>
+      </div>
+      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+    </section>
+
+    <section class="strip" aria-label="Nos engagements">
+      <div><strong>100 % coton</strong><span>bio et épais</span></div>
+      <div><strong>Fait à la main</strong><span>pièce par pièce</span></div>
+      <div><strong>Personnalisable</strong><span>ton texte, ta couleur</span></div>
+      <div><strong>Retrait au Meux</strong><span>ou envoi sans plastique</span></div>
+    </section>
+
+    <section id="collection" class="section">
+      <div class="section-head">
+        <h2>La collection</h2>
+        <div class="filters" id="filters" role="tablist">
+          <button class="chip active" data-f="all">Tous</button>
+          <button class="chip" data-f="imprime">Imprimés</button>
+          <button class="chip" data-f="brode">Brodés</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="perso" class="section perso">
+      <div class="perso-preview" id="persoPreview" aria-label="Aperçu de ton tote bag"></div>
+      <div class="perso-form">
+        <h2>Crée ton tote bag</h2>
+        <p>Choisis la couleur, écris ton texte : Lana le réalise pour toi.</p>
+
+        <label class="field-label">Couleur du sac</label>
+        <div class="swatches" id="bagColors"></div>
+
+        <label class="field-label" for="persoText">Ton texte <small>(20 caractères max)</small></label>
+        <input id="persoText" maxlength="20" placeholder="Ex : Léa ♡ la plage" value="Ton prénom ici">
+
+        <label class="field-label">Couleur du texte</label>
+        <div class="swatches" id="inkColors"></div>
+
+        <label class="field-label">Style</label>
+        <div class="toggle" id="styleToggle">
+          <button class="chip active" data-s="imprime">Imprimé · 24 €</button>
+          <button class="chip" data-s="brode">Brodé · 32 €</button>
+        </div>
+
+        <button class="btn btn-wide" id="addPerso">Ajouter au panier</button>
+      </div>
+    </section>
+
+    <section id="apropos" class="section about">
+      <div class="about-badge" aria-hidden="true">LC</div>
+      <div>
+        <h2>Bonjour, moi c'est Lana</h2>
+        <p>J'habite au Meux, à côté de Compiègne, et c'est là que se trouve mon petit atelier. J'ai lancé ma marque parce que j'adore créer des choses utiles et jolies. Chaque tote bag passe entre mes mains : je dessine les motifs, je les imprime ou je les brode, puis je les emballe moi-même.</p>
+        <p>Mon idée : des sacs solides qu'on garde des années, au lieu des sacs plastique qu'on jette. Merci de soutenir une jeune créatrice !</p>
+        <p class="signature">— Lana</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Une question, une commande spéciale ?</h2>
+      <p>Cadeau d'anniversaire, sacs pour une classe ou une association… écris-moi ! Tu es près du Meux ou de Compiègne ? On peut se retrouver pour la remise en main propre.</p>
+      <form id="contactForm" class="contact-form">
+        <input name="nom" placeholder="Ton prénom" required>
+        <input name="email" type="email" placeholder="Ton e-mail" required>
+        <textarea name="message" rows="4" placeholder="Ton message" required></textarea>
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="logo">Lana <em>Clavière</em></p>
+    <p>Tote bags faits main avec amour au Meux (60880, Oise) · © <span id="year"></span></p>
+  </footer>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <h3>Mon panier</h3>
+      <button class="close" id="closeCart" aria-label="Fermer">×</button>
+    </div>
+    <ul class="cart-list" id="cartList"></ul>
+    <div class="drawer-foot">
+      <p class="total">Total <strong id="cartTotal">0 €</strong></p>
+      <button class="btn btn-wide" id="checkout">Envoyer ma commande</button>
+      <p class="hint">Ta commande part par e-mail à Lana, qui te répond pour le paiement et la livraison (ou un retrait au Meux).</p>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
